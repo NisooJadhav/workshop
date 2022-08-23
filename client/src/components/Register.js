@@ -66,7 +66,7 @@ export default function Register(){
           <div style={{display:"none"}} className="thankyou_message">
               <h2><em>Thanks</em> for contacting us! We will get back to you soon!
               </h2>
-          </div>ss
+          </div>
       </form>
       ):(
       <div>

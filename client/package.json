@@ -2,7 +2,7 @@
   "name": "workshop",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://obscure-stream-69374.herokuapp.com/",
+  "proxy": "https://young-bayou-49192.herokuapp.com",
   "dependencies": {
     "@auth0/auth0-react": "^1.10.2",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",

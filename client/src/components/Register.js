@@ -1,6 +1,7 @@
 import React,{ useState, useEffect } from "react";
 import { MdSend } from 'react-icons/md';
 import axios from "axios";
+import FormSubmit from './FormSubmit';
 
 export default function Register(){
   const [posts, setPosts] = useState([]);
@@ -24,7 +25,7 @@ export default function Register(){
     <div className='mainContactForm'>
     
     {posts?(    
-    <form method="POST" className="gform">
+    <form className="gform" method="POST" data-email="nishantvedjadhav@gmail.com" action="https://script.google.com/macros/s/AKfycbyAnc529PMiMft1K6V_q3cUyTnQUo700QoNhpqiOvQX4Zm9UQjxDE2z8jDqWj3X1FuU/exec">
           <div className="contactForm">
               <center>
                   <label>enter name:</label>
@@ -49,7 +50,7 @@ export default function Register(){
                   <label>select workshop: </label>
                   <br />
                   
-                  <select>
+                  <select name="workshop">
                   {posts.map((post) => {  
                   return(
                     <option key={post._id}>{post.title}</option>
@@ -59,9 +60,13 @@ export default function Register(){
                   </center>
           </div>
           <div>
-              <button type="submit" style={{ width: "50%" }}><div>Send&nbsp;&nbsp; <MdSend />&nbsp;</div>
-              </button>
+                <button id="submit" value="Submit" style={{ width: "50%" }}><div>Register&nbsp;&nbsp; <MdSend />&nbsp;</div>
+                </button>
           </div>
+          <div style={{display:"none"}} className="thankyou_message">
+              <h2><em>Thanks</em> for contacting us! We will get back to you soon!
+              </h2>
+          </div>ss
       </form>
       ):(
       <div>

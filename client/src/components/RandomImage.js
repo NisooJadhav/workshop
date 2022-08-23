@@ -1,5 +1,5 @@
 import React from 'react';
-import $ from 'jquery';
+//import $ from 'jquery';
 
 export default function RandomImage() {
     document.body.style.cssText = `background-image: linear-gradient(to bottom, #112D4E99, #000)`;

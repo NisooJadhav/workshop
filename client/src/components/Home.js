@@ -2,7 +2,7 @@ import React from "react";
 import Cards from "./Cards";
 import Marquee from "react-fast-marquee";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Carousel from "react-bootstrap/carousel";
+import Carousel from 'react-bootstrap/Carousel';
 
 const Home = () => {
 	

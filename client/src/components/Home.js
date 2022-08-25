@@ -65,7 +65,7 @@ const Home = () => {
 	
   return (
   <>
-  	<video src="./videos/night.mp4" autoPlay loop muted></video>
+  	<video src="./videos/bg.mp4" autoPlay loop muted></video>
 	
     <div>
 	<div className="hero" style={{backgroundImage:"./images/hero.png"}}>

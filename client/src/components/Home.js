@@ -65,7 +65,11 @@ const Home = () => {
 	
   return (
   <>
+  <div className="header">
+  <div className="video-container">
   	<video src="./videos/bg.mp4" autoPlay loop muted></video>
+	</div>
+	</div>
 	
     <div>
 	<div className="hero" style={{backgroundImage:"./images/hero.png"}}>
@@ -129,10 +133,10 @@ const Home = () => {
 	</div>      
 	</div>
 	 
-      <div style={{ height: "58vh" }}></div>
+      <div style={{ height: "50vh" }}></div>
 	  
     </div>
-		<h2 style={{color:"#eee", zIndex:"5"}}>Hear from our students</h2>
+		<h2 style={{color:"#eee", zIndex:"5", textShadow:"2px 2px 10px #000"}}>Hear from our students</h2>
 		<br />
 		<Marquee>
 			<Cards />

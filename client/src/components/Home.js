@@ -47,7 +47,8 @@ const Home = () => {
     }, delta);
   };
 
-  window.onload = function () {
+  window.onload = function type() {
+    
     var elements = document.getElementsByClassName('typewrite');
     for (var i = 0; i < elements.length; i++) {
       var toRotate = elements[i].getAttribute('data-type');
@@ -74,9 +75,9 @@ const Home = () => {
       <div>
         <div className="hero" style={{ backgroundImage: "./images/hero.png" }}>
           <div className="row">
-            <div className="col-4">
+            <div className="col-md-4 col-sm-12">
               <center>
-                <h1 className='main-head'>Workshoply</h1>
+                <h1 className='main-heading'>Workshoply</h1>
               </center>
 
               <Carousel>
@@ -108,7 +109,7 @@ const Home = () => {
 
             </div>
 
-            <div className="col-8 text-center d-flex justify-content-center">
+            <div className="col-md-8 col-sm-12 text-center d-flex justify-content-center">
               <div className="homeContent">
 
                 <h1>
@@ -136,7 +137,7 @@ const Home = () => {
         <div style={{ height: "50vh" }}></div>
 
       </div>
-      <h2 style={{ color: "#eee", zIndex: "5", textShadow: "2px 2px 10px #000" }}>Hear from our students</h2>
+      <h2 style={{ color: "#eee", zIndex: "5", textShadow: "1px 3px 8px #000" }}>Hear from our students</h2>
       <br />
       <Marquee>
         <Cards />

@@ -4,6 +4,7 @@ import axios from "axios";
 import FormSubmit from './FormSubmit';
 
 export default function Register(){
+  
   const [posts, setPosts] = useState([]);
     useEffect(() => {
       axios
@@ -20,6 +21,7 @@ export default function Register(){
     
   return(
   <>
+    <FormSubmit />
     <h1 className='main-head'>Register</h1>
     
     <div className='mainContactForm'>
@@ -43,7 +45,7 @@ export default function Register(){
 
                   <label>enter mobile no:</label>
                   <br />
-                  <input type="tel" size="10" name="mobile" placeholder="Phone" style={{ width: "90%" }} required maxLength="10" spellCheck="false"/>
+                  <input type="tel" size="10" pattern="^[0-9]{10}$" name="mobile" title="mobile" placeholder="Phone" style={{ width: "90%" }} required maxLength="10" spellCheck="false"/>
                   <br />
                   <br />
                   
@@ -51,11 +53,13 @@ export default function Register(){
                   <br />
                   
                   <select name="workshop">
+                  
                   {posts.map((post) => {  
                   return(
                     <option key={post._id}>{post.title}</option>
                   )                 
                   })}
+                  
                   </select>
                   </center>
           </div>
@@ -64,7 +68,7 @@ export default function Register(){
                 </button>
           </div>
           <div style={{display:"none"}} className="thankyou_message">
-              <h2><em>Thanks</em> for contacting us! We will get back to you soon!
+              <h2><em>Thanks</em> for registering! We will get back to you soon!
               </h2>
           </div>
       </form>

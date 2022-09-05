@@ -32,7 +32,7 @@ export default function Contact() {
 
                             <label>enter mobile no:</label>
                             <br />
-                            <input type="tel" size="10" name="mobile" placeholder="Phone" style={{ width: "90%" }} required maxLength="10" spellCheck="false"/>
+                            <input type="tel" size="10" pattern="^[0-9]{10}$" name="mobile" title="mobile" placeholder="Phone" style={{ width: "90%" }} required maxLength="10" spellCheck="false"/>
                             <br />
                             <br />
 

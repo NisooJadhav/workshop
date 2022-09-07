@@ -11,9 +11,9 @@ function Posts() {
                 if (res) {
                     setPosts(res.data)
                 }
-                // else {
-                //     setPosts(res.data="<p>loading...</p>")
-                // }
+                else {
+                     setPosts(res.data="<p style={{zIndex:6,color:'#fff'}}>loading...</p>")
+                }
             })
             .catch(
                 (err) => console.log(err)

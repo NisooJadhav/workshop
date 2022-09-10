@@ -1,8 +1,8 @@
 # workshop
 Full Stack MERN App for managing workshops
 
-![Untitled](https://user-images.githubuser![home2](https://user-images.githubusercontent.com/68807845/189476456-f419594c-2e6f-47e3-8400-d489f4e02047.png)
-content.com/68807845/189120591-235c80cd-c784-4a11-8093-997853516cfe.png)
+![home](https://user-images.githubusercontent.com/68807845/189476487-417265c7-e9be-48cd-9e6e-e52d63c0f4f6.png)
+![home2](https://user-images.githubusercontent.com/68807845/189476497-142c4509-b5b2-4a5c-9582-b6125397e669.png)
 
 Read the docs at [Workshoply - docs](https://workshop-docs.vercel.app/).
 

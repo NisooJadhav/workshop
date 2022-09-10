@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
+import { BsDownload } from 'react-icons/bs';
+import { FiExternalLink } from 'react-icons/fi';
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
-    
+
 const About = () => {
 
   const [index, setIndex] = useState(0);
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
-  
+
   return (
     <>
       <h1 className='main-head'>About Us</h1>
       <div className="homeContent">
-        <p style={{textAlign:"center"}}>
+        <p style={{ textAlign: "center" }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -65,13 +67,25 @@ const About = () => {
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
-		
-        <p style={{marginTop:"20px"}}>
-			Lorem ipsum dolor sit a	met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-		</p>
+
+        <p style={{ marginTop: "20px" }}>
+          Lorem ipsum dolor sit a	met, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+        </p>
       </div>
 
-      <div style={{ height: "80px" }}></div>
+      <div style={{ height: "50px" }}></div>
+
+      <div style={{ height: "80px" }}>
+        <a href="https://workshop-docs.vercel.app/" target={"_blank"}>
+          <button id="submit" value="Submit" style={{ width: "20%" }}><div>Documentation site&nbsp;&nbsp; <FiExternalLink />&nbsp;</div>
+          </button>
+        </a>
+
+        <a href="https://workshop-docs.vercel.app/extra/pdf" target={"_blank"}>
+          <button id="submit" value="Submit" style={{ width: "20%" }}><div>Download PDF&nbsp;&nbsp; <BsDownload />&nbsp;</div>
+          </button>
+        </a>
+      </div>
     </>
   );
 }

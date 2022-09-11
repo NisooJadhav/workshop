@@ -48,7 +48,7 @@ const About = () => {
               alt="Second slide"
             />
             <Carousel.Caption>
-              <h3>Second slide label</h3>
+              <h3>Every doubt solved.</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </Carousel.Caption>
           </Carousel.Item>
@@ -60,7 +60,7 @@ const About = () => {
               alt="Third slide"
             />
             <Carousel.Caption>
-              <h3>Third slide label</h3>
+              <h3>Path for a bright future</h3>
               <p>
                 Praesent commodo cursus magna, vel scelerisque nisl consectetur.
               </p>
@@ -73,8 +73,24 @@ const About = () => {
         </p>
       </div>
 
-      <div style={{ height: "50px" }}></div>
+      <div style={{ height: "40px" }}></div>
+      <center>
+        <div style={{ height: "1px", backgroundColor: "#aaa", width: "75%" }}></div>
+      </center> 
+      <div style={{ height: "25px" }}></div>
+      <h1 className='main-head'>Video Demonstration</h1>
+      <div style={{ height: "25px" }}></div>
 
+      <iframe
+        width="100%"
+        height="700"
+        src="https://player.vimeo.com/video/748285506?h=451d79f00c&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      />
+
+      <div style={{ height: "10px" }}></div>
       <div style={{ height: "80px" }}>
         <a href="https://workshop-docs.vercel.app/" target={"_blank"}>
           <button id="submit" value="Submit" style={{ width: "20%" }}><div>Documentation site&nbsp;&nbsp; <FiExternalLink />&nbsp;</div>
@@ -86,6 +102,7 @@ const About = () => {
           </button>
         </a>
       </div>
+      <div style={{ height: "25px" }}></div>
     </>
   );
 }

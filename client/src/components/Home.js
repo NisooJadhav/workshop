@@ -48,7 +48,7 @@ const Home = () => {
   };
 
   window.onload = function type() {
-    
+
     var elements = document.getElementsByClassName('typewrite');
     for (var i = 0; i < elements.length; i++) {
       var toRotate = elements[i].getAttribute('data-type');
@@ -134,8 +134,8 @@ const Home = () => {
           </div>
         </div>
 
-        <div style={{ height: "50vh" }}></div>
-
+        <div style={{ height: "30vh" }}></div>
+        
       </div>
       <h2 style={{ color: "#eee", zIndex: "5", textShadow: "1px 3px 8px #000" }}>Hear from our students</h2>
       <br />

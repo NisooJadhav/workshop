@@ -32,7 +32,7 @@ function Posts() {
                 {spinner ?
                     (
                         <>
-                            <center style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", height: "60vh" }}>
+                            <center style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", height: "55vh" }}>
                                 <InfinitySpin
                                     width="200"
                                     color="#42d392"

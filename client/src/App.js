@@ -4,6 +4,9 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import axios from "axios";
+
+import { BallTriangle } from "react-loader-spinner";
 
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
@@ -15,16 +18,16 @@ import CreateWorkshop from "./components/CreateWorkshop";
 import NotFound from "./components/NotFound";
 import Footer from "./components/Footer.js";
 import RandomImage from "./components/RandomImage";
+import Search from "./components/Search";
 import "./App.css";
 
 export default function App() {
   return (
     <div className="App">
       <RandomImage />
-
       <Router>
-        <Navbar />  
-        <Routes>  
+        <Navbar />
+        <Routes>
           <Route path="" element={<Home />}></Route>
           <Route path="/" element={<Home />}></Route>
           <Route path="/home" element={<Home />}></Route>
@@ -37,9 +40,10 @@ export default function App() {
           <Route path="/create" element={<CreateWorkshop />}></Route>
           <Route path="/create/posts" element={<Workshops />}></Route>
           <Route path="*" element={<NotFound />}></Route>
-          <Route path="/register" element={<Register />}></Route>
+          <Route path="/register" element={<Register/>}></Route>
+          <Route path="/search" element={<Search />}></Route>
         </Routes>
-      </Router>	  
+      </Router>
       <Footer />
     </div>
   );

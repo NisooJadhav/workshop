@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Cards from "./Cards";
 import Marquee from "react-fast-marquee";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
+import '../Counter.css'
 
 const Home = () => {
 
@@ -48,7 +49,6 @@ const Home = () => {
   };
 
   window.onload = function type() {
-
     var elements = document.getElementsByClassName('typewrite');
     for (var i = 0; i < elements.length; i++) {
       var toRotate = elements[i].getAttribute('data-type');
@@ -63,6 +63,39 @@ const Home = () => {
     css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
     document.body.appendChild(css);
   };
+
+  function stat() {
+    const items = [...document.querySelectorAll('.number')];
+
+    const updateCount = (el) => {
+      const value = parseInt(el.dataset.value);
+      const increment = Math.ceil(value / 1000);
+      let initialValue = 0;
+
+      const increaseCount = setInterval(() => {
+        initialValue += increment;
+
+        if (initialValue > value) {
+          el.textContent = `${value}+`;
+          clearInterval(increaseCount);
+          return;
+        }
+
+        el.textContent = `${initialValue}+`;
+      }, 1);
+    };
+
+    items.forEach((item) => {
+      updateCount(item);
+    })
+  }
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      stat();
+    }, 8000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -85,25 +118,34 @@ const Home = () => {
                   <img
                     className="d-block w-100"
                     src="./images/29.svg"
+                    alt="carousel 1"
                   />
                   <Carousel.Caption>
+                    Problem Solving
                   </Carousel.Caption>
+                    <br />
                 </Carousel.Item>
                 <Carousel.Item>
                   <img
                     className="d-block w-100"
                     src="./images/30.svg"
+                    alt="carousel 2"
                   />
                   <Carousel.Caption>
+                    Research
                   </Carousel.Caption>
+                    <br />
                 </Carousel.Item>
                 <Carousel.Item>
                   <img
                     className="d-block w-100"
                     src="./images/31.svg"
+                    alt="carousel 3"
                   />
                   <Carousel.Caption>
+                    Constant Updation
                   </Carousel.Caption>
+                    <br/>
                 </Carousel.Item>
               </Carousel>
 
@@ -113,7 +155,7 @@ const Home = () => {
               <div className="homeContent">
 
                 <h1>
-                  <a href="" className="typewrite text-decoration-none !important" data-period="500" data-type='[ "learn from anywhere", "best teachers from the industry", "host workshop with confidence", "attend workshops for free" ]'>
+                  <a href="#" className="typewrite text-decoration-none !important" data-period="500" data-type='[ "learn from anywhere", "best teachers from the industry", "host workshop with confidence", "attend workshops for free" ]'>
                     <span className="wrap" style={{ fontSize: "10rem", color: "#eee" }}></span>
                   </a>
                 </h1>
@@ -135,14 +177,35 @@ const Home = () => {
         </div>
 
         <div style={{ height: "30vh" }}></div>
-        
+
+
+        <div className="stats">
+          <br />
+          <h2 style={{ color: "#eee", zIndex: "5", textShadow: "1px 3px 8px #000" }}>Statistics</h2>
+          <section>
+            <article>
+              <div className="number" data-value="800">0</div>
+              <p>Students taught</p>
+            </article>
+            <article>
+              <div className="number" data-value="8472">0</div>
+              <p>Total Hours in Teaching</p>
+            </article>
+            <article>
+              <div className="number" data-value="500">0</div>
+              <p>Happy Placements</p>
+            </article>
+          </section>
+
+
+          <h2 style={{ color: "#eee", zIndex: "5", textShadow: "1px 3px 8px #000" }}>Hear from our students</h2>
+          <br />
+          <Marquee>
+            <Cards />
+          </Marquee>
+          <br />
+        </div>
       </div>
-      <h2 style={{ color: "#eee", zIndex: "5", textShadow: "1px 3px 8px #000" }}>Hear from our students</h2>
-      <br />
-      <Marquee>
-        <Cards />
-      </Marquee>
-      <br />
     </>
   );
 };

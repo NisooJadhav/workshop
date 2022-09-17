@@ -18,7 +18,7 @@ export default function Navbar() {
         <div className="brand-div">
           <img
             src="https://cdn-icons-png.flaticon.com/512/6543/6543839.png"
-            alt=""
+            alt="workshoply logo"
           />&nbsp;<h1 className="brand"> Workshoply </h1>
         </div>
       </NavLink>

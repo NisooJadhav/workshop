@@ -11,13 +11,13 @@ const Footer = () => {
                     {/* created by&nbsp; */}
 
                     <a href="https://nisootech.vercel.app" target="_blank">
-                        <img src="./images/nisoo.jpg" />
+                        <img src="./images/nisoo.jpg" alt="logo" />
                     </a>
 
                     {/* using&nbsp; */}
                     {/* <SiMongodb /><SiExpress /><FaReact /><SiNodedotjs /> */}
 
-                    <a href="https://github.com/NisooJadhav/workshop" target="_blank" style={{ fontSize: "2.5rem", color: "#eee", padding: "0", margin: "0" }}>&nbsp;<DiGitBranch /></a>
+                    <a href="https://github.com/NisooJadhav/workshop" target="_blank" rel="noreferrer" style={{ fontSize: "2.5rem", color: "#eee", padding: "0", margin: "0" }}>&nbsp;<DiGitBranch /></a>
 
                 </nav>
             </footer>

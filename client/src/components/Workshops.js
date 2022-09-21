@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import RandomImage from "./RandomImage";
 import { InfinitySpin } from "react-loader-spinner";
+import moment from "moment";
 
 function Posts() {
     const [posts, setPosts] = useState([]);
@@ -57,7 +58,7 @@ function Posts() {
                                         <h2>{post.title}</h2>
                                         <p>{post.content}</p>
                                         <span>workshop tenure: </span>
-                                        <p>{new Date(post.fromDate)} ~ {new Date(post.toDate)}</p>
+                                        <p>{moment.utc(post.fromDate).format('MM/DD/YYYY')} ~ {moment.utc(post.toDate).format('MM/DD/YYYY')}</p>
                                         <span>instructor: </span>
                                         <p>{post.instructor}</p>
                                         <center>

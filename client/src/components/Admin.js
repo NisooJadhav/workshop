@@ -7,8 +7,8 @@ const Admin = () => {
     title: '',
     content: '',
     fromDate: '',
-    toDate:'',
-    instructor:'',
+    toDate: '',
+    instructor: '',
   })
 
   const handleChange = (event) => {

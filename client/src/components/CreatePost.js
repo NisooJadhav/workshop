@@ -149,7 +149,6 @@ function CreatePost() {
                   value={post.fromDate}
                   onChange={handleChange}
                   style={{ marginBottom: "1rem" }}
-                  placeholder="from date"
                   required
                 />
                 <br />
@@ -161,7 +160,6 @@ function CreatePost() {
                   value={post.toDate}
                   onChange={handleChange}
                   style={{ marginBottom: "1rem" }}
-                  placeholder="to date"
                   required
                 />
                 <br />
@@ -208,7 +206,6 @@ function CreatePost() {
                   cols="22" rows="6"
                 />
                 <input type="date"
-                  placeholder="from date"
                   name="fromDate"
                   onChange={handleUpdate}
                   value={updatedPost.fromDate ? updatedPost.fromDate : ""}
@@ -216,7 +213,6 @@ function CreatePost() {
                   required
                 />
                 <input type="date"
-                  placeholder="to date"
                   name="toDate"
                   onChange={handleUpdate}
                   value={updatedPost.toDate ? updatedPost.toDate : ""}

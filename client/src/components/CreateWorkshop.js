@@ -11,8 +11,11 @@ import { BsPen } from "react-icons/bs"
 import { MdDone } from "react-icons/md"
 import { IoMdAdd } from "react-icons/io"
 import { AiOutlineClose } from "react-icons/ai"
+import { ProgressBar } from "react-loader-spinner";
+
 
 function CreatePost() {
+  const [spinner, setSpinner] = useState(false);
 
   const navigate = useNavigate();
   const [post, setPost] = useState({
@@ -59,10 +62,15 @@ function CreatePost() {
   const handleShow = () => setShow(true);
 
   useEffect(() => {
+    setSpinner(true);
+
     axios
       .get("/posts")
       .then((res) => {
-        setPosts(res.data);
+        if (res) {
+          setSpinner(false);
+          setPosts(res.data)
+        }
       })
       .catch((err) => console.log(err));
   }, []);
@@ -148,7 +156,7 @@ function CreatePost() {
                 <br />
                 <label style={{ paddingTop: "1rem" }}>from date: </label>
                 <br />
-                <input type="text"
+                <input type="date"
                   name="fromDate"
                   value={post.fromDate}
                   onChange={handleChange}
@@ -160,7 +168,7 @@ function CreatePost() {
 
                 <label style={{ paddingTop: "1rem" }}>to date: </label>
                 <br />
-                <input type="text"
+                <input type="date"
                   name="toDate"
                   value={post.toDate}
                   onChange={handleChange}
@@ -213,7 +221,7 @@ function CreatePost() {
                   value={updatedPost.title ? updatedPost.title : ""}
                   style={{ marginBottom: "1rem" }}
                   onChange={handleUpdate}
-				  spellCheck="false"
+                  spellCheck="false"
                 />
                 <textarea
                   placeholder="content"
@@ -222,25 +230,25 @@ function CreatePost() {
                   value={updatedPost.content ? updatedPost.content : ""}
                   className="modalTextarea"
                   cols="22" rows="6"
-				  spellCheck="false"
+                  spellCheck="false"
                 />
-                <input type="text"
+                <input type="date"
                   placeholder="from date"
                   name="fromDate"
                   onChange={handleUpdate}
                   value={updatedPost.fromDate ? updatedPost.fromDate : ""}
                   style={{ marginBottom: "1rem" }}
                   required
-				  spellCheck="false"
+                  spellCheck="false"
                 />
-                <input type="text"
+                <input type="date"
                   placeholder="to date"
                   name="toDate"
                   onChange={handleUpdate}
                   value={updatedPost.toDate ? updatedPost.toDate : ""}
                   style={{ marginBottom: "1rem" }}
                   required
-				  spellCheck="false"
+                  spellCheck="false"
                 />
                 <input type="text"
                   placeholder="to date"
@@ -249,7 +257,7 @@ function CreatePost() {
                   value={updatedPost.instructor ? updatedPost.instructor : ""}
                   style={{ marginBottom: "1rem" }}
                   required
-				  spellCheck="false"
+                  spellCheck="false"
                 />
               </Modal.Body>
 
@@ -263,57 +271,69 @@ function CreatePost() {
               </Modal.Footer>
             </Modal>
 
-            {posts ? (
-              <>
-                {posts.map((post) => {
-                  return (
-                    <div
-                      className="belowWorkshop"
-                      style={{
-                        marginBottom: "1rem",
-                        border: "none",
-                        borderRadius: "8px",
-                      }}
-                      key={post._id}
-                    >
-                      <h2>{post.title}</h2>
-                      <p>{post.content}</p>
-                      <p>{post.fromDate} ~ {post.toDate}</p>
-                      <p>{post.instructor}</p>
+            {spinner ?
+              (
+                <>
+                  <center style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", height: "20vh" }}>
+                    <ProgressBar
+                      height="150"
+                      width="150"
+                      ariaLabel="progress-bar-loading"
+                      wrapperStyle={{}}
+                      wrapperClass="progress-bar-wrapper"
+                      borderColor='royalblue'
+                      barColor='#42d392'
+                    />
+                  </center>
+                </>
+              ) :
+              (
+                <>
+                  {posts.map((post) => {
+                    return (
                       <div
+                        className="belowWorkshop"
                         style={{
-                          display: "flex",
-                          flexDirection: "row",
-                          justifyContent: "center"
+                          marginBottom: "1rem",
+                          border: "none",
+                          borderRadius: "8px",
                         }}
+                        key={post._id}
                       >
-                        <Button
-						variant="outline-dark"
-                          onClick={() =>
-                            updatePost(post._id, post.title, post.content, post.fromDate, post.toDate, post.instructor)
-                          }
-                          style={{ width: "25%" }}
+                        <h2>{post.title}</h2>
+                        <p>{post.content}</p>
+                        <p>{post.fromDate} ~ {post.toDate}</p>
+                        <p>{post.instructor}</p>
+                        <div
+                          style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            justifyContent: "center"
+                          }}
                         >
-                          <BsPen />
-                        </Button>
-                        <Button
-						variant="outline-dark"	
-                          onClick={() => deletePost(post._id)}
-                          style={{ width: "25%" }}
-                        >
-                          <RiDeleteBin7Line />
-                        </Button>
+                          <Button
+                            variant="outline-dark"
+                            onClick={() =>
+                              updatePost(post._id, post.title, post.content, post.fromDate, post.toDate, post.instructor)
+                            }
+                            style={{ width: "25%" }}
+                          >
+                            <BsPen />
+                          </Button>
+                          <Button
+                            variant="outline-dark"
+                            onClick={() => deletePost(post._id)}
+                            style={{ width: "25%" }}
+                          >
+                            <RiDeleteBin7Line />
+                          </Button>
+                        </div>
+                        <br />
                       </div>
-					  <br />
-                    </div>
-                  );
-                })}
-              </>
-            ) : (
-              <>
-                <p>"loading..."</p>
-              </>
-            )}
+                    );
+                  })}
+                </>
+              )}
           </div>
         </div>
       </div>

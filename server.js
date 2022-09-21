@@ -20,8 +20,8 @@ mongoose
 const postSchema = mongoose.Schema({
   title: String,        
   content: String,
-  fromDate: String,
-  toDate: String,
+  fromDate: Date,
+  toDate: Date,
   instructor: String,
 });
 

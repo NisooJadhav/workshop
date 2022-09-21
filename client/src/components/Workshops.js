@@ -57,7 +57,7 @@ function Posts() {
                                         <h2>{post.title}</h2>
                                         <p>{post.content}</p>
                                         <span>workshop tenure: </span>
-                                        <p>{post.fromDate} ~ {post.toDate}</p>
+                                        <p>{new Date(post.fromDate)} ~ {new Date(post.toDate)}</p>
                                         <span>instructor: </span>
                                         <p>{post.instructor}</p>
                                         <center>

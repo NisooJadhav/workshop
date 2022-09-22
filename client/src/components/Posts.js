@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Button, Form } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
+import moment from "moment";
 
 function Posts() {
   const navigate = useNavigate();
@@ -123,7 +124,7 @@ function Posts() {
               >
                 <h4>{post.title}</h4>
                 <p>{post.content}</p>
-                <p>{post.fromDate} - {post.toDate}</p>
+                <p>{moment.utc(post.fromDate).format('MM/DD/YYYY')} - {moment.utc(post.toDate).format('MM/DD/YYYY')}</p>
                 <p>{post.instructor}</p>
                 <div
                   style={{

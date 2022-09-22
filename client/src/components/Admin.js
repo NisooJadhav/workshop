@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import axios from "axios"
+import moment from "moment";
 
 const Admin = () => {
   const [input, setInput] = useState({
@@ -68,9 +69,9 @@ const Admin = () => {
             <br />
             <p>{workshop.content}</p>
             <br />
-            <p>{workshop.fromDate}</p>
+            <p>{moment.utc(workshop.fromDate).format('MM/DD/YYYY')}</p>
             <br />
-            <p>{workshop.toDate}</p>
+            <p>{moment.utc(workshop.toDate).format('MM/DD/YYYY')}</p>
             <br />
             <p>{workshop.instructor}</p>
             <br />

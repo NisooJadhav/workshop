@@ -12,6 +12,8 @@ import { MdDone } from "react-icons/md"
 import { IoMdAdd } from "react-icons/io"
 import { AiOutlineClose } from "react-icons/ai"
 import { ProgressBar } from "react-loader-spinner";
+import moment from "moment";
+
 
 
 function CreatePost() {
@@ -302,7 +304,7 @@ function CreatePost() {
                       >
                         <h2>{post.title}</h2>
                         <p>{post.content}</p>
-                        <p>{post.fromDate} ~ {post.toDate}</p>
+                        <p>{moment.utc(post.fromDate).format('MM/DD/YYYY')} ~ {moment.utc(post.toDate).format('MM/DD/YYYY')}</p>
                         <p>{post.instructor}</p>
                         <div
                           style={{

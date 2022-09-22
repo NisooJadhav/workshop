@@ -4,6 +4,7 @@ const path = require("path");
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const { resolveSoa } = require("dns");
 
 const app = express();
 app.use(express.json());
@@ -18,7 +19,7 @@ mongoose
   .catch((err) => console.log(err));
 
 const postSchema = mongoose.Schema({
-  title: String,        
+  title: String,
   content: String,
   fromDate: Date,
   toDate: Date,
@@ -41,6 +42,17 @@ app.post("/create", (req, res) => {
     .save()
     .then((doc) => console.log(doc))
     .catch((err) => console.log(err));
+});
+
+app.post("/search", async (req, res) => {
+  let payload = req.body.payload.trim();
+  console.log(payload);
+
+  let search = await Post.find({ title: { $regex: new RegExp('^' + payload + '.*', 'i') } }).exec();
+
+  //limit search
+  search = search.slice(0, 10);
+  res.send({ payload: search });
 });
 
 app.get("/posts", (req, res) => {
@@ -71,11 +83,10 @@ app.put("/update/:id", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-if(process.env.NODE_ENV === 'production')
-{
+if (process.env.NODE_ENV === 'production') {
   app.use(express.static("client/build"));
-  app.get("*",(req,res)=>{
-    res.sendFile(path.resolve(__dirname,"client","build","index.html"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
 

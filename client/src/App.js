@@ -15,7 +15,7 @@ import CreateWorkshop from "./components/CreateWorkshop";
 import NotFound from "./components/NotFound";
 import Footer from "./components/Footer.js";
 import RandomImage from "./components/RandomImage";
-//import Search from "./components/Search";
+import Search from "./components/Search";
 import "./App.css";
 
 export default function App() {
@@ -38,7 +38,7 @@ export default function App() {
           <Route path="/create/posts" element={<Workshops />}></Route>
           <Route path="*" element={<NotFound />}></Route>
           <Route path="/register" element={<Register />}></Route>
-          {/* <Route path="/search" element={<Search />}></Route> */}
+          <Route path="/search" element={<Search />}></Route>
         </Routes>
       </Router>
       <Footer />

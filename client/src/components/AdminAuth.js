@@ -46,7 +46,7 @@ const AdminAuth = () => {
                     <center style={{ width: "100%", padding: "0", margin: "0" }}>
                         <label>enter key</label>
                         <input type="password" name="key" placeholder="******" required style={{ width: "95%" }} size="10" />
-                        <button type="submit" style={{ width: "50%" }} onClick={handleSubmit} > Check <MdDone /> </button>
+                        <button type="submit" style={{ width: "50%" }} onClick={handleSubmit} > Log In <MdDone /> </button>
                     </center>
                 </form>
                 <br />

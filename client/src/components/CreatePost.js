@@ -196,6 +196,7 @@ function CreatePost() {
                   value={updatedPost.title ? updatedPost.title : ""}
                   style={{ marginBottom: "1rem" }}
                   onChange={handleUpdate}
+                  required
                 />
                 <textarea
                   placeholder="content"
@@ -204,6 +205,7 @@ function CreatePost() {
                   value={updatedPost.content ? updatedPost.content : ""}
                   className="modalTextarea"
                   cols="22" rows="6"
+                  required
                 />
                 <input type="date"
                   name="fromDate"
